@@ -22,6 +22,8 @@ train <- tbl_df(bind_cols(train_subject,train_activity,train_data))
 
 data_comp <- bind_rows(test,train) %>% 
   select(subject,activity,contains(".mean."),contains(".std.")) %>%
+  gather(element,value,tBodyAcc.mean...X:fBodyBodyGyroJerkMag.std..,-subject,-activity) %>%
+  separate(element, into=("mean", "std")) %>%
   arrange(subject,activity)
 
 ##gather X,Y,Z values
