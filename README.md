@@ -4,8 +4,11 @@
 Run the following code to load the tidy data set (instructions modified from "Tidy data and the Assignment" thread on course Discussion Forums (https://class.coursera.org/getdata-013/forum/thread?thread_id=31)):
 
 address <- "https://s3.amazonaws.com/coursera-uploads/user-8eceb435220f3611f3051bcc/973500/asst-3/d270b710ec1811e4b004873bcd76f1bc.txt"
+
 address <- sub("^https", "http", address)
+
 data <- read.table(url(address), header = TRUE, stringsAsFactors= FALSE)
+
 View(data)
 
 A description of the 68 variables of the tidy data set can be found in the accompanying code book (https://github.com/kyonion/GetData/blob/master/CodeBook.md).
@@ -14,8 +17,11 @@ A description of the 68 variables of the tidy data set can be found in the accom
 Run code contained in run_analysis.R (https://github.com/kyonion/GetData/blob/master/run_analysis.R) to download and unzip original data into a "data" folder in the working directory, and create a tidy data set containing only the averages of the mean and standard deviation of each variable.
 
 Of the original data only certain files containing test and training data are used:
+
 *subject_test/train: integer numbers identifying test and training subjects
+
 *X_test/train: normalised measurement values
+
 *y_test/train: integer numbers signifying activity
 
 Any data contained in the "Inertial Signals" folders are ignored as these files/values would be filtered in later analysis steps anyway (also see "David's personal course project FAQ" (https://class.coursera.org/getdata-013/forum/thread?thread_id=30) on course Discussion Forums).
